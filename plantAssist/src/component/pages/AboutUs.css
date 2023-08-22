@@ -1,0 +1,15 @@
+.header{
+    top:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+ 
