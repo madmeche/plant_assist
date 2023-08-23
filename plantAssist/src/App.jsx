@@ -4,18 +4,24 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./component/NavBar";
 import Footer from "./component/Footer";
 import Home from "./component/pages/Home";
-// import SignIn from "./component/pages/Login";
+import Login from "./component/pages/Login";
+import Register from "./component/pages/Register";
 
 function App() {
+  const [currentForm, setCurrentForm] = useState('login')
 
   return (
     <>
-    
+    {/* {
+      currentForm === 'login' ? <Login /> : <Register />
+    }
+     */}
     <Navbar />
     <Footer/>
       <Routes>
         
-        {/* <Route path="/login" element={<SignIn />} /> */}
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />} /> 
         <Route path ='/' element = {<Home/>} />
       
       </Routes>

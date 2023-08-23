@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import SignIn from './pages/Login';
+// import { Login } from './pages/Login';
+// import  Register  from './pages/Register';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -58,11 +59,11 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
+              
               <Link
               path='/login'
                 to='/login'
                 className='nav-links'
-                element={<SignIn/>}
                 onClick={closeMobileMenu}
               >
                 Login
@@ -73,6 +74,7 @@ function Navbar() {
                 to='/register'
                 className='nav-links'
                 onClick={closeMobileMenu}
+                // element = {<SignUp />}
               >
                 Sign Up
               </Link>

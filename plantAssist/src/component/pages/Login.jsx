@@ -1,92 +1,58 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Login.css";
+// import Register from "./Register";
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleSubmit = () => {
+    e.preventDefault();
+    console.log(email);
   };
 
   return (
-    <Container component="main" maxWidth="sm">
-      <Box
-        sx={{
-          background: "linen",
-          boxShadow: 15,
-          borderRadius: 5,
-          px: 10,
-          py: 2,
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Link to="/">
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-        </Link>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Link to="/">
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
+    <>
+      {/* {currentForm === "login" ? <Login /> : <Register />} */}
+
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div className="auth-form-container">
+            <label htmlFor="email">email</label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="you@email.com"
+              id="email"
+              name="email"
+            />
+            <div className="pass">
+            <label htmlFor="password">password</label>
+            <input
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              type="password"
+              placeholder="********"
+              id="password"
+              name="password"
+            />
+            <div className="btn-login">
+            </div>
+            <button>Login</button>
+            </div>
+          </div>
+
+          <div className="auth-form-link">
+          <Link to="/register">
+            <button>Sign Up for Free!</button>
           </Link>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Sign Up For Free!"}
-              </Link>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
-    </Container>
+          </div>
+        </form>
+      </div>
+    </>
   );
-}
+};
+
+export default Login;
