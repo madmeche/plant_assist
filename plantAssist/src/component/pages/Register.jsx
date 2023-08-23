@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios, {isCancel, AxiosError} from 'axios'
 import "./Register.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [name, setName] = useState("");
 
   const handleSubmit = () => {
-    e.preventDefault();
-    console.log(email);
+    axios.post('localhost:8080/api/auth/signup', {
+        firstName:{firstName},
+        lastName: {lastName},
+        email: {email},
+        username: {name},
+        password: {pass}
+    })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
   };
 
   return (
@@ -18,6 +32,28 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <div className="auth-form-container">
           <div className="header"><h2>Register</h2></div>
+          <div className="pass">
+            <label htmlFor="firstName">First Name</label>
+            <input
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              type="firstName"
+              placeholder="firstName"
+              id="firstName"
+              name="firstName"
+            />
+            </div>
+            {/* <div className="pass"> */}
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              type="lastName"
+              placeholder="lastName"
+              id="lastName"
+              name="lastName"
+            />
+            {/* </div> */}
           <div className="pass">
             <label htmlFor="username">username</label>
             <input

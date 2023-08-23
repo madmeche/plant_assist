@@ -1,20 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import axios, {isCancel, AxiosError} from 'axios'
+import { useNavigate } from "react-router-dom";
 // import Register from "./Register";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const handleSubmit = () => {
-    e.preventDefault();
-    console.log(email);
-  };
+  // const rp = require('request-promise')
+
+  // const register = {
+  //   api: 'localhost:8080/api/auth/signup',
+  //   json: true //automatically parses the JSON string in the response
+  // };
+
+  // rp(register)
+  // .then(function (user) {
+  //   console.log('user logged in', user.data);
+  // })
+  // .catch(function(err){
+  //   console.log("Error:", err)
+  //     throw err
+  // });
+
+  const handleSubmit = async function getUser() {
+    try{
+      const response = await axios.get("http://localhost:8000/api/users/login");
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+    // e.preventDefault();
+    // console.log(email);
+
 
   return (
     <>
-      {/* {currentForm === "login" ? <Login /> : <Register />} */}
 
       <div className="container">
         
@@ -41,7 +65,9 @@ const Login = () => {
                 name="password"
               />
               <div className="btn-login">
+                <Link to="/profile">
                 <button><b>Login</b></button>
+                </Link>
               </div>
             </div>
           </div>
