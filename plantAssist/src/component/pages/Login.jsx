@@ -17,8 +17,10 @@ const Login = () => {
       {/* {currentForm === "login" ? <Login /> : <Register />} */}
 
       <div className="container">
+        
         <form onSubmit={handleSubmit}>
           <div className="auth-form-container">
+            <div className="header"><h2>Login</h2></div>
             <label htmlFor="email">email</label>
             <input
               value={email}
@@ -29,25 +31,25 @@ const Login = () => {
               name="email"
             />
             <div className="pass">
-            <label htmlFor="password">password</label>
-            <input
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
-              type="password"
-              placeholder="********"
-              id="password"
-              name="password"
-            />
-            <div className="btn-login">
-            </div>
-            <button>Login</button>
+              <label htmlFor="password">password</label>
+              <input
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+                type="password"
+                placeholder="********"
+                id="password"
+                name="password"
+              />
+              <div className="btn-login">
+                <button><b>Login</b></button>
+              </div>
             </div>
           </div>
 
           <div className="auth-form-link">
-          <Link to="/register">
-            <button>Sign Up for Free!</button>
-          </Link>
+            <Link to="/register">
+              <button><b>Sign Up for Free!</b></button>
+            </Link>
           </div>
         </form>
       </div>
