@@ -1,26 +1,29 @@
 import React from 'react';
+import { useContext } from 'react';
+import { PlantDataContext } from '../PlantDataContext';
+import { BasicCard } from './BasicPlant';
+import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-function Plant(props) {
+
+function PlantList () {
+
+const plants = useContext(PlantDataContext)
+
   return (
     <>
-    <h1>PLANT</h1>
-      {/* <li className='plant__item'>
-        <Link className='plant__item__link' to={props.path}>
-          <figure className='plant__item__pic-wrap' data-category={props.label}>
-            <img
-              className='plant__item__img'
-              alt='Plant Image'
-              src={props.src}
-            />
-          </figure>
-          <div className='plant__item__info'>
-            <h5 className='plant__item__text'>{props.text}</h5>
-          </div>
-        </Link>
-      </li> */}
+    <Box 
+    sx={{
+      margin: 10
+    }}
+    >
+    Plants: {plants.length}
+    {plants.localeCompare((plant) => (
+      <BasicCard key={plant.id} plant={plant} />
+    ))}
+    </Box>
     </>
   );
 }
 
-export default Plant;
+export default PlantList;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import axios, {isCancel, AxiosError} from 'axios'
 // import { useNavigate } from "react-router-dom";
 // import Register from "./Register";
 
@@ -19,7 +18,7 @@ const handleSubmit = (e) => {
   };
   console.log(data);
 
-  fetch("http://localhost8080/api/users/login", {
+  fetch("http://localhost8080/api/auth/login", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -32,31 +31,6 @@ const handleSubmit = (e) => {
   })
 }
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     //tries to make POST request to backend with username/password and rememberMe status.
-  //     const response = await axios.post(
-  //       "http://localhost:8000/api/auth/username",
-  //       {
-  //         email: email,
-  //         password: password,
-  //       }
-  //     );
-
-  //     if (response.data.success) {
-  //       console.log(`Welcome ${email}`, response.data.data);
-
-  //       //this should navigate user on login success to dashboard or if changed whatever target route endpoint entered.
-  //       navigate("/"); //update this to profile
-  //     } else {
-  //       setErrorMessage(response.data.data);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error: ", error);
-  //     setErrorMessage("Wrong username or password.");
-  //   }
-  // };
-
   return (
     <>
 
@@ -65,6 +39,7 @@ const handleSubmit = (e) => {
         <form onSubmit={handleSubmit}>
           <div className="auth-form-container">
             <div className="header"><h2>Login</h2></div>
+
             <label htmlFor="email">email</label>
             <input
               value={email}

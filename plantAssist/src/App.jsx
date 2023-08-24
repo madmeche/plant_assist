@@ -9,7 +9,7 @@ import Register from "./component/pages/Register";
 import AboutUs from "./component/pages/AboutUs";
 import HardyZone from "./component/Zone";
 import { PlantDataContext } from "./PlantDataContext";
-import Plant from "./component/Plant";
+// import PlantList from "./component/Plant";
 // import Profile from "./component/pages/Profile"
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
     fetch("http://localhost:8080/api/plant/")
       .then((response) => response.json())
       .then((json) => {
+        console.log(json)
         setData(json.data);
       });
   }, []);
@@ -37,7 +38,7 @@ function App() {
           <Route path="/zone" element={<HardyZone />} />
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path='/plant' element={<Plant/>} />
+          {/* <Route path='/plant' element={<PlantList/>} /> */}
           {/* <Route path ='/' element = {<Profile/>} /> */}
         </Routes>
       </PlantDataContext.Provider>

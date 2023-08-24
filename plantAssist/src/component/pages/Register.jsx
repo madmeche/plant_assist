@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios, {isCancel, AxiosError} from 'axios'
+
 import "./Register.css";
 
 const Register = () => {
@@ -13,28 +13,32 @@ const Register = () => {
 
 
 
-  const handleSubmit = () => {
-
-    axios.post('localhost:8080/api/auth/signup', {
-        firstName:{firstName},
-        lastName: {lastName},
-        email: {email},
-        username: {name},
-        password: {pass}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      email,
+      password,
+    };
+    console.log(data);
+  
+    fetch("http://localhost8080/api/auth/signup", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",      
+      },
     })
-    .then(function (response) {
-        console.log(response);
+    .then((response) => response.json())
+    .then((json) => {
+      console.log("response: ", json.success);
     })
-    .catch(function (error) {
-        console.log(error);
-    })
-  };
+  }
 
   return (
     <>
       <div className="container">
         <form onSubmit={handleSubmit}>
-          <div className="auth-form-container">
+          <div className="auth-form-container-div">
           <div className="header"><h2>Register</h2></div>
           <div className="pass">
             <label htmlFor="firstName">First Name</label>
