@@ -2,40 +2,60 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import axios, {isCancel, AxiosError} from 'axios'
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import Register from "./Register";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  // const rp = require('request-promise')
+// let navigate = useNavigate()
 
-  // const register = {
-  //   api: 'localhost:8080/api/auth/signup',
-  //   json: true //automatically parses the JSON string in the response
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const data = {
+    email,
+    password,
+  };
+  console.log(data);
+
+  fetch("http://localhost8080/api/users/login", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",      
+    },
+  })
+  .then((response) => response.json())
+  .then((json) => {
+    console.log("response: ", json.success);
+  })
+}
+
+  // const handleSubmit = async () => {
+  //   try {
+  //     //tries to make POST request to backend with username/password and rememberMe status.
+  //     const response = await axios.post(
+  //       "http://localhost:8000/api/auth/username",
+  //       {
+  //         email: email,
+  //         password: password,
+  //       }
+  //     );
+
+  //     if (response.data.success) {
+  //       console.log(`Welcome ${email}`, response.data.data);
+
+  //       //this should navigate user on login success to dashboard or if changed whatever target route endpoint entered.
+  //       navigate("/"); //update this to profile
+  //     } else {
+  //       setErrorMessage(response.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error: ", error);
+  //     setErrorMessage("Wrong username or password.");
+  //   }
   // };
-
-  // rp(register)
-  // .then(function (user) {
-  //   console.log('user logged in', user.data);
-  // })
-  // .catch(function(err){
-  //   console.log("Error:", err)
-  //     throw err
-  // });
-
-  const handleSubmit = async function getUser() {
-    try{
-      const response = await axios.get("http://localhost:8000/api/users/login");
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-    // e.preventDefault();
-    // console.log(email);
-
 
   return (
     <>

@@ -5,7 +5,7 @@ function AboutUs () {
     return(
         <>
         <div className='container'>
-        <div className='header'><h1>About the Creater</h1></div>
+        <div className='au-header'><h1>About the Creater</h1></div>
         <div className='body'><p>
             During COVID lockdown of 2020, it was very common for people to develop a hobby.
             Madeleine was post Mardi Gras accident and recovery from the consequential surgery.
@@ -21,6 +21,7 @@ function AboutUs () {
         </p>
         </div>
         </div>
+
         </>
     )
 }

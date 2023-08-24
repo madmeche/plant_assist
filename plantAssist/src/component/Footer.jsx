@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import AboutUs from "./pages/AboutUs";
+// import AboutUs from "./pages/AboutUs";
 //   const [click, setClick] = useState(false);
 
 //   const handleClick = () => setClick(!click);
@@ -14,9 +14,6 @@ function Footer() {
       <div className="footer-links">
           <div className="footer-link-items">
             <Link to="/aboutus">
-                <Routes>
-                <Route path ='/aboutus' element = {<AboutUs/>} />
-                </Routes>
               About Us
             </Link>
           </div>

@@ -1,17 +1,18 @@
 .list{
-    outline: grey solid 3px;
+    /* outline: grey solid 3px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     padding-bottom: 50px;
     min-height: 100vh;
-    width: 100vw;
+    color:aliceblue;
+    /* width: 100vw; */
     /* overflow:hidden; */
 }
 
 .list-container{
-    /* outline: orange solid 5px; */
+    outline: orange solid 5px;
     display: flex;
     right: 100px;
     width: 100vw;
@@ -20,20 +21,23 @@
     padding-top: 50px;
     padding-bottom: 10px;
     flex-direction: column;
+    font-size: 40px;
 
 }
 
 .list-container-opt {
-    /* outline: red solid 5px; */
+    outline: red solid 5px;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
-    width: 9vw;
-    right: 100;
-    margin-top: 15px;
-    margin-left: 730px;
-    padding-left: 10px;
+    width: 170px;
+    font-size:24px;
+    height:60px;
+    /* right: 100; */
+    /* margin-top: 15px;*/
+    /* margin-left: 730px; */
+    padding-left: 10px; 
 }
 
 

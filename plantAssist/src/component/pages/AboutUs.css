@@ -1,7 +1,14 @@
-.header{
-    top:0;
-    left:0;
-    right:0;
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.au-header{
+    outline: white solid 5px;
+    margin-top: 200px;
+    color:rgb(68, 43, 10);
     display: flex;
     justify-content: center;
 }
@@ -9,7 +16,9 @@
 .body {
     font-size: 12px;
     display: flex;
-    justify-content: center;
+    text-align: center;
+    /* justify-content: center; */
+    width: 80vw;
 }
 
  

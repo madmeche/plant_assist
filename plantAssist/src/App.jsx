@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./component/NavBar";
@@ -6,28 +6,41 @@ import Footer from "./component/Footer";
 import Home from "./component/pages/Home";
 import Login from "./component/pages/Login";
 import Register from "./component/pages/Register";
-import Profile from "./component/pages/Profile"
+import AboutUs from "./component/pages/AboutUs";
+import HardyZone from "./component/Zone";
+import { PlantDataContext } from "./PlantDataContext";
+import Plant from "./component/Plant";
+// import Profile from "./component/pages/Profile"
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login')
+  // const [currentForm, setCurrentForm] = useState('login')
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/plant/")
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json.data);
+      });
+  }, []);
 
   return (
     <>
-    {/* {
-      currentForm === 'login' ? <Login /> : <Register />
-    }
-     */}
-    <Navbar />
-    <Footer/>
-      <Routes>
-        
-        <Route path="/login" element={<Login />} /> 
-        <Route path="/register" element={<Register />} /> 
-        <Route path ='/' element = {<Home/>} />
-        <Route path ='/' element = {<Profile/>} />
-      
-      </Routes>
-      
+ 
+      <PlantDataContext.Provider value={data}>
+        <Navbar />
+        <Footer />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/zone" element={<HardyZone />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path='/plant' element={<Plant/>} />
+          {/* <Route path ='/' element = {<Profile/>} /> */}
+        </Routes>
+      </PlantDataContext.Provider>
     </>
   );
 }

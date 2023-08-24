@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 function Plant(props) {
   return (
     <>
-      <li className='plant__item'>
+    <h1>PLANT</h1>
+      {/* <li className='plant__item'>
         <Link className='plant__item__link' to={props.path}>
           <figure className='plant__item__pic-wrap' data-category={props.label}>
             <img
@@ -17,7 +18,7 @@ function Plant(props) {
             <h5 className='plant__item__text'>{props.text}</h5>
           </div>
         </Link>
-      </li>
+      </li> */}
     </>
   );
 }

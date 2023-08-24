@@ -10,7 +10,11 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [name, setName] = useState("");
 
+
+
+
   const handleSubmit = () => {
+
     axios.post('localhost:8080/api/auth/signup', {
         firstName:{firstName},
         lastName: {lastName},

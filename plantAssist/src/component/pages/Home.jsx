@@ -12,15 +12,17 @@ function Home() {
   const [selectedOption3, setSelectedOption3] = useState("");
 
   const options1 = [
+    {value: ""},
     { value: "Full Sun", label: "Full Sun" },
     { value: "1-3 Hours", label: "1-3 Hours" },
     { value: "3-6 Hours", label: "3-6 Hours" },
     { value: "6-9 Hours", label: "6-9 Hours" },
     { value: "9-12 Hours", label: "9-12 Hours" },
-    { value: null, label: "Open to Options" },,
+    { value: null, label: "Any" },,
   ];
 
   const options2 = [
+    {value: ""},
     { value: "Annuals", label: "Annuals" },
     { value: "Perennials", label: "Perennials" },
     { value: "Shrubs", label: "Shrubs" },
@@ -28,15 +30,16 @@ function Home() {
     { value: "Vines", label: "Vines" },
     { value: "Succulent", label: "Succulent" },
     { value: "Indoor", label: "Indoor" },
-    { value: null, label: "Open to Options" },,
+    { value: null, label: "Any" },,
   ];
 
   const options3 = [
+    {value: ""},
     { value: "Spring", label: "Spring" },
     { value: "Summer", label: "Summer" },
     { value: "Fall", label: "Fall" },
     { value: "Winter", label: "Winter" },
-    { value: null, label: "Open to Options" },,
+    { value: null, label: "Any" },
   ];
 
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
