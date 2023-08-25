@@ -7,6 +7,7 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [error, setError] = useState("");
 
 // let navigate = useNavigate()
 
@@ -27,9 +28,15 @@ const handleSubmit = (e) => {
   })
   .then((response) => response.json())
   .then((json) => {
-    console.log("response: ", json.success);
-  })
-}
+    console.log(json);
+    if (json.success) {
+      sessionStorage.setItem("authenticated", json.success);
+      sessionStorage.setItem("id", json.data[0].id);
+    } else {
+      setError(json.message);
+    }
+  });
+};
 
   return (
     <>
@@ -60,7 +67,7 @@ const handleSubmit = (e) => {
                 name="password"
               />
               <div className="btn-login">
-                <Link to="/profile">
+                <Link to="/zone">
                 <button><b>Login</b></button>
                 </Link>
               </div>
@@ -74,6 +81,7 @@ const handleSubmit = (e) => {
           </div>
         </form>
       </div>
+      {/* {error ? (<div color="red">{error}</div>) : null} */}
     </>
   );
 };

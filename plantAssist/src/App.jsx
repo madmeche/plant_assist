@@ -9,6 +9,8 @@ import Register from "./component/pages/Register";
 import AboutUs from "./component/pages/AboutUs";
 import HardyZone from "./component/Zone";
 import { PlantDataContext } from "./PlantDataContext";
+import PrivateRoute from "./component/utils/PrivateRoute";
+
 // import PlantList from "./component/Plant";
 // import Profile from "./component/pages/Profile"
 
@@ -35,7 +37,12 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/zone" element={<HardyZone />} />
+          <Route path="/zone" element= {
+          <PrivateRoute>
+            {<HardyZone />}
+          </PrivateRoute>
+          }
+           />
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           {/* <Route path='/plant' element={<PlantList/>} /> */}
