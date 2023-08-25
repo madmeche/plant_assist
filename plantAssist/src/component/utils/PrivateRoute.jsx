@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({children}) => {
     const isAuthenticated = sessionStorage.getItem("authenticated") || false;
-return isAuthenticated ? children : <Navigate to = '/' replace />
+return isAuthenticated === true ? children : <Navigate to = '/zone' replace />
 }
 
 export default PrivateRoute;
