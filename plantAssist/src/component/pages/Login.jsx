@@ -6,7 +6,7 @@ import "../styles/Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
 // let navigate = useNavigate()
@@ -59,8 +59,8 @@ const handleSubmit = (e) => {
             <div className="pass">
               <label htmlFor="password">password</label>
               <input
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 placeholder="********"
                 id="password"
