@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './homeStyle.css'
+import '../styles/homeStyle.css'
 // Go to setting to access profile page.
 
 

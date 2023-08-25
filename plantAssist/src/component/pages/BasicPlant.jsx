@@ -23,7 +23,7 @@ export function BasicCard(props) {
     <Card sx={{ minWidth: 275, margin: 5 }}>
       <CardMedia
         sx={{
-          height: 500
+          height: 300
         }}
         image={plant.image}
         title={`Plant Image for ${plant.name}`}

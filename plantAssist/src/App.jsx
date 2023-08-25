@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./component/NavBar";
-import Footer from "./component/Footer";
+import Navbar from "./component/pages/NavBar";
+import Footer from "./component/pages/Footer";
 import Home from "./component/pages/Home";
 import Login from "./component/pages/Login";
 import Register from "./component/pages/Register";
-import AboutUs from "./component/pages/AboutUs";
-import HardyZone from "./component/Zone";
+// import AboutUs from "./component/pages/AboutUs";
+import HardyZone from "./component/pages/Zone";
 import { PlantDataContext } from "./PlantDataContext";
 import PrivateRoute from "./component/utils/PrivateRoute";
-
-// import PlantList from "./component/Plant";
+// import PlantList from "./component/pages/Plant";
 // import Profile from "./component/pages/Profile"
 
 function App() {
@@ -19,14 +18,14 @@ function App() {
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/api/plant/")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json)
-        setData(json.data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/api/plant")
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       console.log(json)
+  //       setData(json.data);
+  //     });
+  // }, []);
 
   return (
     <>
@@ -44,7 +43,7 @@ function App() {
           }
            />
           <Route path="/" element={<Home />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          {/* <Route path="/aboutus" element={<AboutUs />} /> */}
           {/* <Route path='/plant' element={<PlantList/>} /> */}
           {/* <Route path ='/' element = {<Profile/>} /> */}
         </Routes>

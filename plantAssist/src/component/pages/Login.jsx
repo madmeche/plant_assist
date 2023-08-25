@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "../styles/Login.css";
 // import { useNavigate } from "react-router-dom";
 // import Register from "./Register";
 
@@ -19,7 +19,7 @@ const handleSubmit = (e) => {
   };
   console.log(data);
 
-  fetch("http://localhost8080/api/auth/login", {
+  fetch("http://localhost:8080/api/auth/login", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {

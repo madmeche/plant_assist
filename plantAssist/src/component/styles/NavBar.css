@@ -1,14 +1,15 @@
 .navbar {
     background: linear-gradient(90deg, rgb(214, 231, 114) 0%, rgb(42, 78, 8) 100%);
-    height: 150px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: end;
     font-size: 2rem;
     position: fixed;
     top: 0;
-    font-size: 40px;
+    font-size: 20px;
 
   }
   
@@ -18,20 +19,22 @@
     justify-content: center;
     align-items: center;
     /* text-align: right; */
-    height: 80px;
+    height: 30px;
     top: 0;
     /* max-width: 3500px; */
   }
   
   .navbar-logo {
+    /* outline: black solid; */
     color: #fff;
     justify-self: start;
-    margin-left: 50px;
+    margin-left: 10px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 20px;
     display: flex;
-    align-items: center;
+    align-items: left;
+    padding-right: 10px;
   }
   
   .fa-typo3 {
@@ -40,6 +43,7 @@
   }
   
   .nav-menu {
+    /* outline: black solid; */
     display: grid;
     margin-top: 10px;
     grid-template-columns: repeat(5, auto);
@@ -47,9 +51,12 @@
     list-style: none;
     text-align: center;
     left: 0;
-    width: 80vw;
+    width: 85vw;
     justify-content: right;
-    margin-right: 2rem;
+    margin-right: 1rem;
+    padding-top: 20px;
+    
+
   }
   
   .nav-item {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
+import { Button } from './button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../styles/NavBar.css';
 // import { Login } from './pages/Login';
 // import  Register  from './pages/Register';
 
