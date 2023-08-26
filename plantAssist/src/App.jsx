@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./component/pages/NavBar";
-import Footer from "./component/pages/Footer";
-import Home from "./component/pages/Home";
-import Login from "./component/pages/Login";
-import Register from "./component/pages/Register";
+// import { Routes, Route } from "react-router-dom";
+// import Navbar from "./component/pages/NavBar";
+// import Footer from "./component/pages/Footer";
+// import Home from "./component/pages/Home";
+// import Login from "./component/pages/Login";
+// import Register from "./component/pages/Register";
 // import AboutUs from "./component/pages/AboutUs";
-import HardyZone from "./component/pages/Zone";
-import { PlantDataContext } from "./PlantDataContext";
-import PrivateRoute from "./component/utils/PrivateRoute";
+// import HardyZone from "./component/pages/Zone";
+// import { PlantDataContext } from "./PlantDataContext";
+// import PrivateRoute from "./component/utils/PrivateRoute";
 // import PlantList from "./component/pages/Plant";
 // import Profile from "./component/pages/Profile"
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login')
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   // useEffect(() => {
   //   fetch("http://localhost:8080/api/plant")
@@ -30,24 +30,24 @@ function App() {
   return (
     <>
  
-      <PlantDataContext.Provider value={data}>
-        <Navbar />
-        <Footer />
-        <Routes>
-          <Route path="/login" element={<Login />} />
+      {/* <PlantDataContext.Provider value={data}> */}
+        {/* <Navbar /> */}
+        {/* <Footer /> */}
+        {/* <Routes> */}
+          {/* <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/zone" element= {
-          <PrivateRoute>
-            {<HardyZone />}
-          </PrivateRoute>
-          }
-           />
-          <Route path="/" element={<Home />} />
+          // <PrivateRoute> */}
+            {/* <HardyZone /> */}
+          // {/* </PrivateRoute> */}
+          {/* }
+           /> */}
+          {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/aboutus" element={<AboutUs />} /> */}
           {/* <Route path='/plant' element={<PlantList/>} /> */}
           {/* <Route path ='/' element = {<Profile/>} /> */}
-        </Routes>
-      </PlantDataContext.Provider>
+        {/* </Routes> */}
+      {/* </PlantDataContext.Provider> */}
     </>
   );
 }

@@ -28,7 +28,7 @@ useEffect(() => {
   const handleSearchPlant = (e) => {
     setSearchPlant(e.target.value);
   };
-  const filteredData= plant?.filter((item)=>{return item.name=== searchPlant})
+
 
 
   // const filteredData= plant?.filter((item)=>{return item['name'].toLowerCase().includes(`${searchPlant}`.toLowerCase())})

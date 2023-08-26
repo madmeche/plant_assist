@@ -26,16 +26,16 @@ const handleSubmit = (e) => {
       "Content-type": "application/json; charset=UTF-8",      
     },
   })
-  .then((response) => response.json())
-  .then((json) => {
-    console.log(json);
-    if (json.success) {
-      sessionStorage.setItem("authenticated", json.success);
-      sessionStorage.setItem("id", json.data[0].id);
-    } else {
-      setError(json.message);
-    }
-  });
+  // .then((response) => response.json())
+  // .then((json) => {
+  //   console.log(json);
+  //   if (json.success) {
+  //     sessionStorage.setItem("authenticated", json.success);
+  //     sessionStorage.setItem("id", json.data[0].id);
+  //   } else {
+  //     setError(json.message);
+  //   }
+  // });
 };
 
   return (

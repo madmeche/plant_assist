@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './button';
+import { Button } from './pages/button';
 import { Link } from 'react-router-dom';
 import '../styles/NavBar.css';
 // import { Login } from './pages/Login';
@@ -32,10 +32,10 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Plant Assist 
-            <i className='fa-brands fa-pagelines' />
+            {/* <i className='fa-brands fa-pagelines' /> */}
           </Link>
           <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+            {/* <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> */}
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
